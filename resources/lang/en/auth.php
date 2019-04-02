@@ -31,4 +31,5 @@ return [
     'forgot_password' => 'Forgot password?',
     'login_now' => 'Sign-in',
     'send_password_link' => 'Send password reset link',
+    'reset_password' => 'Reset password',
 ];

@@ -17,11 +17,11 @@
 
 @section('content')
     <div class="bg-primary min-h-100 wrapper">
-        <div class="container-fluid min-h-100 pt-lg-5 pt-xl-5 pt-md-0 pt-sm-0">
-            <div class="text-center mt-3 pt-3">
+        <div class="container-fluid min-h-100">
+            <div class="text-center">
 
                 <div id="text" class="title_text">
-                    <div class="display-1 mt-5 pt-lg-5 pt-xl-5 pt-md-0 pt-sm-0 text-white bg-primary noselect"
+                    <div class="display-1 pt-lg-3 pt-xl-3 pt-md-0 pt-sm-0 text-white bg-primary noselect"
                          id="title">
                         {{trans('dictionary.title')}}
                     </div>

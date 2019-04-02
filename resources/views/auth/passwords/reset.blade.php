@@ -1,7 +1,108 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <div class="bg-primary min-h-100 wrapper">
+        <div class="container-fluid min-h-100 pt-lg-5 pt-xl-5 pt-md-0 pt-sm-0">
+            <div class="text-center mt-3 pt-3">
+
+                <div id="text" class="title_text">
+                    <div class="display-1 mt-5 pt-lg-5 pt-xl-5 pt-md-0 pt-sm-0 text-white bg-primary noselect"
+                         id="title">
+                        {{trans('dictionary.title')}}
+                    </div>
+                    <div class="display-5 mb-5 text-white-50 noselect" id="title">
+                        {{trans('dictionary.slogan')}}
+                    </div>
+                </div>
+
+                <div id="formfields">
+                    <div class="row justify-content-md-center">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                            <form method="POST" action="{{ route('password.update') }}">
+                                @csrf
+
+                                <input type="hidden" name="token" value="{{ $token }}">
+
+                                <div id="username" class="form-group py-1">
+                                    <div id="labels" class="row px-3 text-light">
+                                        <label for="emailadress" class="col-6 text-left p-0">
+                                            {{trans('auth.emailaddress')}}
+                                        </label>
+                                    </div>
+                                    <div id="input">
+                                        <input type="email"
+                                               class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                               name="email"
+                                               value="{{ old('email') }}"
+                                               id="emailadress"
+                                               placeholder="{{ trans('auth.emailaddress') }}">
+                                    </div>
+
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+
+                                <div id="password" class="form-group py-1">
+                                    <div id="labels" class="row px-3 text-light">
+                                        <label for="password" class="col-6 text-left p-0">
+                                            {{trans('auth.password')}}
+                                        </label>
+                                    </div>
+                                    <div id="input">
+                                        <input type="password"
+                                               class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                               name="password"
+                                               id="password"
+                                               placeholder="{{ trans('auth.password') }}">
+                                    </div>
+
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+
+                                <div id="password_confirm" class="form-group py-1">
+                                    <div id="labels" class="row px-3 text-light">
+                                        <label for="password_confirm" class="col-6 text-left p-0">
+                                            {{trans('auth.password_confirm')}}
+                                        </label>
+                                    </div>
+                                    <div id="input">
+                                        <input type="password"
+                                               class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                               name="password_confirmation"
+                                               id="password_confirm"
+                                               placeholder="{{ trans('auth.password_confirm') }}">
+                                    </div>
+                                </div>
+
+                                <div id="buttons" class="row">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                        <button type="submit"
+                                                class="btn btn-lg btn-dark text-light submit-button w-100">{{ trans('auth.reset_password') }}</button>
+                                    </div>
+                                </div>
+
+                                @if (session('status'))
+                                    <div class="mt-2">
+                                        <div class="alert alert-success" role="alert">
+                                            {{ session('status') }}
+                                        </div>
+                                    </div>
+                                @endif
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{--<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -61,5 +162,5 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}}
 @endsection
