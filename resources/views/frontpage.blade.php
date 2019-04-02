@@ -33,11 +33,11 @@
                             <h2>{!! trans('dictionary.family_offer') !!}</h2>
                             <h5 class="">{{trans('dictionary.register_today')}}</h5>
                         </div>
-                        <div class="col-12 mb-3">
-                            <a href="{{route('register')}}" class="btn btn-outline-primary px-5 w-100 rounded-full">{{trans('auth.register')}}</a>
+                        <div class="col-12 my-3">
+                            <a href="{{route('register')}}" class="btn btn-outline-primary px-5 w-100 rounded-full py-3">{{trans('auth.register')}}</a>
                         </div>
                         <div class="col-12">
-                            <a href="{{route('login')}}" class="btn btn-primary text-light px-5 w-100 rounded-full">{{trans('auth.sign_in')}}</a>
+                            <a href="{{route('login')}}" class="btn btn-primary text-light px-5 w-100 rounded-full py-3">{{trans('auth.sign_in')}}</a>
                         </div>
                     </div>
                 </div>

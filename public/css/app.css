@@ -13886,3 +13886,45 @@ input.form-border:active {
   animation: movingGradient 9s ease infinite;
 }
 
+.register-block {
+  text-align: center;
+  position: relative;
+  line-height: 24px;
+}
+
+.register-block:after {
+  content: "";
+  position: absolute;
+  top: auto;
+  margin-left: -25%;
+  bottom: 22.5px;
+  border-bottom: 1px solid #c44d01;
+  width: 50%;
+}
+
+.register-now {
+  background: #343a40;
+  line-height: 45px;
+  color: #f8f9fa;
+  text-decoration: none !important;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  box-shadow: #fe7f2d 0 0 50px;
+  transition: background-color 300ms;
+}
+
+.register-now:hover {
+  background: #1d2124;
+  color: #f8f9fa !important;
+}
+
+@media screen and (min-width: 991px) {
+  .title_text {
+    text-align: center;
+    position: relative;
+    line-height: 24px;
+  }
+}
+

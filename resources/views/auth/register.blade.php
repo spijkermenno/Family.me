@@ -7,102 +7,136 @@
             -webkit-appearance: none;
             margin: 0;
         }
+
+        .invalid-feedback {
+            color: whitesmoke;
+            font-weight: normal !important;
+        }
     </style>
 @endpush
 
 @section('content')
-    <div class="gradient-primary min-h-100 pt-5 wrapper">
-        <div class="container mt-1 pt-1">
-            <div class="text-center mt-1 pt-1">
+    <div class="bg-primary min-h-100 wrapper">
+        <div class="container-fluid min-h-100 pt-lg-5 pt-xl-5 pt-md-0 pt-sm-0">
+            <div class="text-center mt-3 pt-3">
 
-                <div class="row justify-content-center">
-                    <div class="col-10 col-md-5 col-lg-5">
-                        <div class="display-5 text-white-50 text-left" id="title">
-                            {{trans('auth.register_now')}}
-                        </div>
-                        <div class="display-1 text-white" id="title">
-                            Family
-                        </div>
-                        <div class="display-5 mb-5 text-white-50 text-right" id="title">
-                            {{trans('dictionary.slogan')}}
+                <div id="text" class="title_text">
+                    <div class="display-1 mt-5 pt-lg-5 pt-xl-5 pt-md-0 pt-sm-0 text-white bg-primary noselect"
+                         id="title">
+                        {{trans('dictionary.title')}}
+                    </div>
+                    <div class="display-5 mb-5 text-white-50 noselect" id="title">
+                        {{trans('dictionary.slogan')}}
+                    </div>
+                </div>
+
+                <div id="formfield">
+                    <div class="row justify-content-md-center">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                            <form method="POST" action="{{ route('register') }}">
+                                @csrf
+
+                                <div id="familyname" class="form-group py-1">
+                                    <div id="label" class="row px-3 text-light">
+                                        <label for="familyname" class="col-6 text-left p-0">
+                                            {{trans('auth.familyname')}}
+                                        </label>
+                                    </div>
+                                    <input type="text"
+                                           class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('familyname') ? ' is-invalid' : '' }}"
+                                           name="familyname" value="{{ old('familyname') }}" id="familyname"
+                                           placeholder="{{ trans('auth.familyname') }}">
+                                    @if ($errors->has('familyname'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('familyname') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+
+                                <div class="form-group py-1">
+                                    <div id="label" class="row px-3 text-light">
+                                        <label for="email" class="col-6 text-left p-0">
+                                            {{trans('auth.emailaddress')}}
+                                        </label>
+                                    </div>
+                                    <input type="email"
+                                           class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                           name="email" value="{{ old('email') }}" id="emailadress"
+                                           placeholder="{{ trans('auth.emailaddress') }}">
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+
+                                <div class="form-group py-1">
+                                    <div id="label" class="row px-3 text-light">
+                                        <label for="familysize" class="col-6 text-left p-0">
+                                            {{trans('auth.familysize')}}
+                                        </label>
+                                    </div>
+                                    <input type="number" min="1" max="20" step="1"
+                                           class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('familysize') ? ' is-invalid' : '' }}"
+                                           name="familysize" value="{{ old('familysize') }}" id="familysize"
+                                           placeholder="{{ trans('auth.familysize') }}">
+                                    @if ($errors->has('familysize'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('familysize') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+
+                                <div class="form-group py-1">
+                                    <div id="label" class="row px-3 text-light">
+                                        <label for="password" class="col-6 text-left p-0">
+                                            {{trans('auth.password')}}
+                                        </label>
+                                    </div>
+                                    <input type="password"
+                                           class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                           name="password" required id="password"
+                                           placeholder="{{ trans('auth.password') }}">
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+
+                                <div class="form-group py-1">
+                                    <div id="label" class="row px-3 text-light">
+                                        <label for="password_confirm" class="col-6 text-left p-0">
+                                            {{trans('auth.password_confirm')}}
+                                        </label>
+                                    </div>
+                                    <input type="password"
+                                           class="form-control rounded-full bg-light form-border p-4"
+                                           name="password_confirmation" required id="password_confirm"
+                                           placeholder="{{ trans('auth.password_confirm') }}">
+                                </div>
+
+                                <div id="buttons" class="row py-1">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                        <button type="submit"
+                                                class="btn btn-lg btn-dark text-light submit-button w-100">{{ trans('auth.register_new_account') }}</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
 
-                <div class="row justify-content-md-center">
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
-
-                            <div class="form-group rounded-full">
-                                <input type="text"
-                                       class="form-control bg-light rounded-pill form-border {{ $errors->has('familyname') ? ' is-invalid' : '' }}"
-                                       name="familyname" value="{{ old('familyname') }}" id="familyname"
-                                       placeholder="{{ trans('auth.familyname') }}">
-                                @if ($errors->has('familyname'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('familyname') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-
-                            <div class="form-group rounded-full">
-                                <input type="email"
-                                       class="form-control bg-light rounded-pill form-border {{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                       name="email" value="{{ old('email') }}" id="emailadress"
-                                       placeholder="{{ trans('auth.emailaddress') }}">
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-
-                            <div class="form-group rounded-full">
-                                <input type="number" min="1" max="20" step="1"
-                                       class="form-control rounded-pill bg-light form-border {{ $errors->has('familysize') ? ' is-invalid' : '' }}"
-                                       name="familysize" value="{{ old('familysize') }}" id="familysize"
-                                       placeholder="{{ trans('auth.familysize') }}">
-                                @if ($errors->has('familysize'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('familysize') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-
-                            <div class="form-group rounded-full">
-                                <input type="password"
-                                       class="form-control rounded-pill bg-light form-border {{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                       name="password" required id="password"
-                                       placeholder="{{ trans('auth.password') }}">
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-
-                            <div class="form-group rounded-full">
-                                <input type="password"
-                                       class="form-control rounded-pill bg-light form-border"
-                                       name="password_confirmation" required id="password_confirm"
-                                       placeholder="{{ trans('auth.password_confirm') }}">
-                            </div>
-
-                            <div class="row">
-                                <span class="col-1"></span>
-                                <button type="submit" class="btn btn-lg btn-outline-dark submit-button col-10">{{ trans('auth.register_new_account') }}</button>
-                                <p class="col-12 text-dark mt-2 text-center">
-                                    Heeft u al een account?
-                                    <a class="text-secondary" href="{{route('login')}}">Inloggen!</a>
-                                </p>
-                            </div>
+                <div class="register-block mb-5 mt-3">
+                    <p class="text-light">{{ trans('auth.allready_member') }}</p>
+                    <div class="row justify-content-md-center">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                            <a href="{{route('login')}}"
+                               class="register-now w-100">{{ trans('auth.login_now') }}</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 @endsection
 
 @push('scripts')

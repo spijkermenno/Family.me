@@ -29,4 +29,6 @@ return [
     'register_direct' => 'Register now.',
     'no_account' => 'New to Family?',
     'forgot_password' => 'Forgot password?',
+    'login_now' => 'Sign-in',
+    'send_password_link' => 'Send password reset link',
 ];
