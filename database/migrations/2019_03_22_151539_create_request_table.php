@@ -25,12 +25,6 @@ class CreateRequestTable extends Migration
             $table->boolean('answer')->nullable(true);
             $table->timestamps();
         });
-
-        Schema::table('requests', function ($table) {
-            $table->foreign('family_id')->reference('id')->on('families');
-            $table->foreign('requesting_familymember_id')->reference('familymember')->on('id');
-            $table->foreign('answering_familymember_id')->reference('familymember')->on('id');
-        });
     }
 
     /**

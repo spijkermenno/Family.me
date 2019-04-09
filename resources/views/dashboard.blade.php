@@ -11,5 +11,8 @@
 @endsection
 
 @section('content')
+    <div class="container-fluid">
+
+    </div>
     {{-- Section for the site content --}}
 @endsection

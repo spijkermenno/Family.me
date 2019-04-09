@@ -25,6 +25,15 @@ return [
     'familysize' => 'Aantal gezinsleden',
     'register_new_account' => 'Registreer',
     'register_now' => 'Registreer je nu voor',
-    'allready_member' => 'Heeft u al een account? Inloggen!'
+    'allready_member' => 'Heeft u al een account? Inloggen!',
+    'register_direct' => 'Registreer nu',
+    'no_account' => 'Nog geen gebruiker bij Family?',
+    'forgot_password' => 'Wachtwoord vergeten?',
+    'login_now' => 'Inloggen',
+    'send_password_link' => 'Vraag nieuw wachtwoord aan',
+    'reset_password' => 'Wachtwoord herstellen',
+    'familymember' => 'Familielid',
+    'memberName' => 'Voornaam',
+    'register_familymembers' => 'Familieleden toevoegen',
 
 ];

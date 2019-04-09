@@ -15,18 +15,14 @@ class CreateFamilymembersTable extends Migration
     {
         Schema::enableForeignKeyConstraints();
 
-        Schema::create('familymembers', function (Blueprint $table) {
+        Schema::create('family_members', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->bigIncrements('id');
             $table->bigInteger('family_id')->unsigned();
             $table->string('name');
-            $table->string('role');
-            $table->string('gender');
+            $table->string('role')->nullable();
+            $table->string('gender')->nullable();
             $table->timestamps();
-        });
-
-        Schema::table('requests', function ($table) {
-            $table->foreign('family_id')->reference('families')->on('id');
         });
     }
 
@@ -37,6 +33,6 @@ class CreateFamilymembersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('familymembers');
+        Schema::dropIfExists('family_members');
     }
 }
