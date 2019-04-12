@@ -39,4 +39,5 @@ return [
     'not_recieved_email_verify' => 'If you did not receive the email',
     'request_new' => 'click here to request another',
     'verify_mail_send' => 'A fresh verification link has been sent to your email address.',
+    'manageAccounts' => 'Manage your Family members',
 ];

@@ -12,6 +12,33 @@
             color: whitesmoke;
             font-weight: normal !important;
         }
+
+        .opaqueBackground {
+            background-color: rgba(0, 0, 0, 0.15);
+            transition: background-color 150ms;
+        }
+
+        .opaqueBackground:hover {
+            background-color: rgba(0, 0, 0, 0.29);
+        }
+
+        .darkOpaqueBackground {
+            background-color: rgba(0, 0, 0, 0.33);
+            transition: background-color 150ms;
+        }
+
+        .darkOpaqueBackground:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .lightOpaqueBackground {
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: background-color 150ms;
+        }
+
+        .lightOpaqueBackground:hover {
+            background-color: rgba(255, 255, 255, 0.99);
+        }
     </style>
 @endpush
 
@@ -43,7 +70,7 @@
                                         </label>
                                     </div>
                                     <input type="text"
-                                           class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('familyname') ? ' is-invalid' : '' }}"
+                                           class="form-control rounded-full lightOpaqueBackground form-border p-4 {{ $errors->has('familyname') ? ' is-invalid' : '' }}"
                                            name="familyname" value="{{ old('familyname') }}" id="familyname"
                                            placeholder="{{ trans('auth.familyname') }}">
                                     @if ($errors->has('familyname'))
@@ -60,7 +87,7 @@
                                         </label>
                                     </div>
                                     <input type="email"
-                                           class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                           class="form-control rounded-full lightOpaqueBackground form-border p-4 {{ $errors->has('email') ? ' is-invalid' : '' }}"
                                            name="email" value="{{ old('email') }}" id="emailadress"
                                            placeholder="{{ trans('auth.emailaddress') }}">
                                     @if ($errors->has('email'))
@@ -77,7 +104,7 @@
                                         </label>
                                     </div>
                                     <input type="number" min="1" max="20" step="1"
-                                           class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('familysize') ? ' is-invalid' : '' }}"
+                                           class="form-control rounded-full lightOpaqueBackground form-border p-4 {{ $errors->has('familysize') ? ' is-invalid' : '' }}"
                                            name="familysize" value="{{ old('familysize') }}" id="familysize"
                                            placeholder="{{ trans('auth.familysize') }}">
                                     @if ($errors->has('familysize'))
@@ -94,7 +121,7 @@
                                         </label>
                                     </div>
                                     <input type="password"
-                                           class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                           class="form-control rounded-full lightOpaqueBackground form-border p-4 {{ $errors->has('password') ? ' is-invalid' : '' }}"
                                            name="password" required id="password"
                                            placeholder="{{ trans('auth.password') }}">
                                     @if ($errors->has('password'))
@@ -111,7 +138,7 @@
                                         </label>
                                     </div>
                                     <input type="password"
-                                           class="form-control rounded-full bg-light form-border p-4"
+                                           class="form-control rounded-full lightOpaqueBackground form-border p-4"
                                            name="password_confirmation" required id="password_confirm"
                                            placeholder="{{ trans('auth.password_confirm') }}">
                                 </div>
@@ -119,7 +146,7 @@
                                 <div id="buttons" class="row py-1">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                         <button type="submit"
-                                                class="btn btn-lg btn-dark text-light submit-button w-100">{{ trans('auth.register_new_account') }}</button>
+                                                class="btn btn-lg darkOpaqueBackground text-light submit-button w-100">{{ trans('auth.register_new_account') }}</button>
                                     </div>
                                 </div>
                             </form>
@@ -127,12 +154,12 @@
                     </div>
                 </div>
 
-                <div class="register-block mb-5 mt-3">
+                <div class="mb-5 mt-3">
                     <p class="text-light">{{ trans('auth.allready_member') }}</p>
                     <div class="row justify-content-md-center">
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
                             <a href="{{route('login')}}"
-                               class="register-now w-100">{{ trans('auth.login_now') }}</a>
+                               class="register-now opaqueBackground w-100">{{ trans('auth.login_now') }}</a>
                         </div>
                     </div>
                 </div>

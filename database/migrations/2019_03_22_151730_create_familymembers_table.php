@@ -22,6 +22,7 @@ class CreateFamilymembersTable extends Migration
             $table->string('name');
             $table->string('role')->nullable();
             $table->string('gender')->nullable();
+            $table->string('personalImageName', 100)->nullable();
             $table->timestamps();
         });
     }

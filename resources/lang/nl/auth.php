@@ -36,4 +36,10 @@ return [
     'memberName' => 'Voornaam',
     'register_familymembers' => 'Familieleden toevoegen',
 
+    'check_email_verify' => 'Controleer voordat u doorgaat uw e-mail voor een verificatielink.',
+    'not_recieved_email_verify' => 'Als u de e-mail niet hebt ontvangen',
+    'request_new' => 'Klik hier om een nieuwe aan te vragen',
+    'verify_mail_send' => 'Er is een nieuwe verificatielink verzonden naar uw e-mailadres.',
+    'manageAccounts' => 'Beheer jouw familieleden',
+
 ];

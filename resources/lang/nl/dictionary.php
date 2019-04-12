@@ -19,6 +19,6 @@ return [
     'planner_uptodate' => 'Jouw familie planner,<br/>altijd up to-date.',
     'whole_family' => 'Bruikbaar voor<br/>de hele familie.',
     'family_offer' => '<span class="h1">Ontdek</span><br/>Wat Family heeft te bieden.',
-    'register_today' => 'Registreer vandaag en check het!'
-
+    'register_today' => 'Registreer vandaag en check het!',
+    'familymembers' => 'Familieleden'
 ];
