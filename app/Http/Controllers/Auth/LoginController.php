@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
@@ -27,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -39,8 +40,30 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         Auth::logout();
         return redirect('/login');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        try {
+            $familySize = DB::table('families')->where('id', Auth::id())->get('familysize')[0]->familysize;
+
+            $temp = DB::table('family_members')->where('family_id', Auth::id())->get();
+            $familymembers = 0;
+            foreach ($temp as $familymember) {
+                $familymembers++;
+            }
+        } catch (\Exception $exception) {
+            $familymembers = 0;
+            $familySize = 0;
+        }
+
+        if ($familymembers > 0 && $familymembers == $familySize) {
+            return redirect('/');
+        }
+        return redirect('RegisterFamilyMembers');
     }
 }

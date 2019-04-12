@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -26,9 +25,18 @@ return [
     'register_new_account' => 'Register',
     'register_now' => 'Register now for',
     'allready_member' => 'Do you already have an account? Login!',
-    'register_direct' => 'Register now.',
+    'register_direct' => 'Register now',
     'no_account' => 'New to Family?',
     'forgot_password' => 'Forgot password?',
     'login_now' => 'Sign-in',
     'send_password_link' => 'Send password reset link',
+    'reset_password' => 'Reset password',
+    'familymember' => 'Family Member',
+    'memberName' => 'First name',
+    'register_familymembers' => 'Register family members',
+    'check_email_verify' => 'Before proceeding, please check your email for a verification link.',
+    'not_recieved_email_verify' => 'If you did not receive the email',
+    'request_new' => 'click here to request another',
+    'verify_mail_send' => 'A fresh verification link has been sent to your email address.',
+    'manageAccounts' => 'Manage your Family members',
 ];

@@ -14,19 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 // Landing page is accessible for everyone.
 Route::view('/privacy-statement', 'privacy-statement')->name('privacy');
 
+Route::get('/imagetest', 'ImageTestController@index')->name('imagetest');
+Route::post('/imagetest', 'ImageTestController@process')->name('imagetest');
 
 Route::middleware('guest:web')
     ->group(function () {
         Route::get('/', 'LandingController@index')->name('index');
     });
 
-Route::middleware('auth:web')
-    ->group(function () {
-        Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-    });
+Route::group(['middleware' => ['auth:web', 'verified']], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('agenda', 'AgendaController@index')->name('agenda');
 
+    Route::get('browse', 'SelectFamilyMemberController@index')->name('SelectFamilyMember');
+
+    Route::get('/account', 'AccountController@index')->name('profile');
+
+    Route::get('RegisterFamilyMembers', 'Auth\RegisterFamilyMembersController@showFamilyMemberForm')->name('RegisterFamilyMembers');
+    Route::post('RegisterFamilyMembers', 'Auth\RegisterFamilyMembersController@register')->name('RegisterFamilyMembers');
+
+    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+});

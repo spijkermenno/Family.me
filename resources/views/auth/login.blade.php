@@ -6,6 +6,33 @@
             color: whitesmoke;
             font-weight: normal !important;
         }
+
+        .opaqueBackground {
+            background-color: rgba(0, 0, 0, 0.15);
+            transition: background-color 150ms;
+        }
+
+        .opaqueBackground:hover {
+            background-color: rgba(0, 0, 0, 0.29);
+        }
+
+        .darkOpaqueBackground {
+            background-color: rgba(0, 0, 0, 0.33);
+            transition: background-color 150ms;
+        }
+
+        .darkOpaqueBackground:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .lightOpaqueBackground {
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: background-color 150ms;
+        }
+
+        .lightOpaqueBackground:hover {
+            background-color: rgba(255, 255, 255, 0.99);
+        }
     </style>
 @endpush
 
@@ -42,7 +69,7 @@
                                     </div>
                                     <div id="input">
                                         <input type="email"
-                                               class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                               class="form-control rounded-full lightOpaqueBackground form-border p-4 {{ $errors->has('email') ? ' is-invalid' : '' }}"
                                                name="email"
                                                value="{{ old('email') }}"
                                                id="emailadress"
@@ -64,7 +91,7 @@
                                     </div>
                                     <div id="input">
                                         <input type="password"
-                                               class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                               class="form-control rounded-full lightOpaqueBackground form-border p-4 {{ $errors->has('password') ? ' is-invalid' : '' }}"
                                                name="password"
                                                required
                                                id="password"
@@ -81,7 +108,7 @@
                                 <div id="buttons" class="row">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                         <button type="submit"
-                                                class="btn btn-lg btn-dark text-light submit-button w-100">{{ trans('auth.sign_in') }}</button>
+                                                class="btn btn-lg darkOpaqueBackground text-light submit-button w-100">{{ trans('auth.sign_in') }}</button>
                                     </div>
                                 </div>
                             </form>
@@ -90,11 +117,11 @@
                 </div>
 
 
-                <div class="register-block mt-3">
+                <div class="mt-3">
                     <p class="text-light">{{ trans('auth.no_account') }}</p>
                     <div class="row justify-content-md-center">
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                            <a href="{{route('register')}}" class="register-now w-100">{{ trans('auth.register_direct') }}</a>
+                            <a href="{{route('register')}}" class="register-now w-100 opaqueBackground">{{ trans('auth.register_direct') }}</a>
                         </div>
                     </div>
                 </div>

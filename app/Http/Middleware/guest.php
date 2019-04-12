@@ -16,8 +16,8 @@ class guest
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::check()){
-            return route('dashboard');
+        if (!Auth::check()) {
+            return route('index');
         }
         return $next($request);
     }

@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\App;
 
 class SetLocale
 {
-    private $acceptedLanguages = array('en', 'nl');
+    private $acceptedLanguages = ['en', 'nl'];
+
     /**
      * Handle an incoming request.
      *

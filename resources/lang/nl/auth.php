@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -25,6 +24,20 @@ return [
     'familysize' => 'Aantal gezinsleden',
     'register_new_account' => 'Registreer',
     'register_now' => 'Registreer je nu voor',
-    'allready_member' => 'Heeft u al een account? Inloggen!'
+    'allready_member' => 'Heeft u al een account? Inloggen!',
+    'register_direct' => 'Registreer nu',
+    'no_account' => 'Nog geen gebruiker bij Family?',
+    'forgot_password' => 'Wachtwoord vergeten?',
+    'login_now' => 'Inloggen',
+    'send_password_link' => 'Vraag nieuw wachtwoord aan',
+    'reset_password' => 'Wachtwoord herstellen',
+    'familymember' => 'Familielid',
+    'memberName' => 'Voornaam',
+    'register_familymembers' => 'Familieleden toevoegen',
 
+    'check_email_verify' => 'Controleer voordat u doorgaat uw e-mail voor een verificatielink.',
+    'not_recieved_email_verify' => 'Als u de e-mail niet hebt ontvangen',
+    'request_new' => 'Klik hier om een nieuwe aan te vragen',
+    'verify_mail_send' => 'Er is een nieuwe verificatielink verzonden naar uw e-mailadres.',
+    'manageAccounts' => 'Beheer jouw familieleden',
 ];
