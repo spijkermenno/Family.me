@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Repositories;
 
 /**
@@ -6,12 +7,11 @@ namespace App\Repositories;
  * @package App\Repositories
  */
 
-use App\Repositories\Contracts\FamilyMemberRepository;
 use Illuminate\Support\Facades\DB as Database;
+use App\Repositories\Contracts\FamilyMemberRepository;
 
 class DatabaseFamilyMemberRepository extends Repository implements FamilyMemberRepository
 {
-
     public function getAll()
     {
         return $this->Handle(Database::table('family_members')->get());

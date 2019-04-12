@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -11,7 +11,7 @@ class DashboardController extends Controller
     {
         $familyMembers = DB::table('family_members')->where('family_id', Auth::id())->get();
 
-        return view('dashboard',[
+        return view('dashboard', [
             'familyMembers' => $familyMembers
         ]);
     }

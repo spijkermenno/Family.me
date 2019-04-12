@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\FamilyMember;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\DB;
 
 class RegisterFamilyMembersController extends Controller
 {
@@ -44,7 +43,6 @@ class RegisterFamilyMembersController extends Controller
             foreach ($temp as $familymember) {
                 $familymembers++;
             }
-
         } catch (\Exception $exception) {
             $familySize = 0;
         }

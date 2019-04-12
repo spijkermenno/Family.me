@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -41,5 +40,4 @@ return [
     'request_new' => 'Klik hier om een nieuwe aan te vragen',
     'verify_mail_send' => 'Er is een nieuwe verificatielink verzonden naar uw e-mailadres.',
     'manageAccounts' => 'Beheer jouw familieleden',
-
 ];

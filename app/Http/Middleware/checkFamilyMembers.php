@@ -3,8 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class checkFamilyMembers
 {
@@ -17,7 +17,7 @@ class checkFamilyMembers
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::id() != NULL) {
+        if (Auth::id() != null) {
             try {
                 $temp = DB::table('family_members')->where('family_id', Auth::id())->get('familysize')->get();
                 $familymembers = 0;

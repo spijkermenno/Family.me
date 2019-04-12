@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Repositories\DatabaseFamilyRepository;
 use App\Repositories\DatabaseFamilyMemberRepository;
-use Illuminate\Support\Facades\Auth;
 
 class SelectFamilyMemberController extends Controller
 {
@@ -19,12 +18,13 @@ class SelectFamilyMemberController extends Controller
         $this->DatabaseFamilyMemberRepository = new DatabaseFamilyMemberRepository();
     }
 
-    private function getFamilyMembers() {
-
+    private function getFamilyMembers()
+    {
         return $this->DatabaseFamilyMemberRepository->getByFamilyId($this->FamilyId);
     }
 
-    public function index() {
+    public function index()
+    {
         $this->FamilyId = Auth::id();
 
         return view('auth.selectFamilyMember', [

@@ -11,7 +11,6 @@ use App\Repositories\Contracts\FamilyRepository;
 
 class DatabaseFamilyRepository extends Repository implements FamilyRepository
 {
-
     public function getAll()
     {
         // TODO: Implement getAll() method.

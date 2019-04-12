@@ -40,5 +40,3 @@ Route::group(['middleware' => ['auth:web', 'verified']], function () {
 
     Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 });
-
-

@@ -11,10 +11,11 @@ use Illuminate\Support\Collection;
 
 class Repository
 {
-    protected function Handle(Collection $collection){
+    protected function Handle(Collection $collection)
+    {
         $CollectionArray = [];
         foreach ($collection as $key => $item) {
-           array_push($CollectionArray, $item);
+            array_push($CollectionArray, $item);
         }
         return $CollectionArray;
     }
