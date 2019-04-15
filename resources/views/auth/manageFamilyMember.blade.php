@@ -21,6 +21,6 @@
             <button type="submit" class="button border-0 h4 text-light">
                 {{trans('auth.saveFamilyMember')}}
             </button>
-        </button>
+        </div>
     </div>
 @endsection
