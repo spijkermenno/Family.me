@@ -24,7 +24,7 @@ return [
     'familysize' => 'Number of family members',
     'register_new_account' => 'Register',
     'register_now' => 'Register now for',
-    'allready_member' => 'Do you already have an account? Login!',
+    'allready_member' => 'Do you already have an account?',
     'register_direct' => 'Register now',
     'no_account' => 'New to Family?',
     'forgot_password' => 'Forgot password?',

@@ -12,11 +12,12 @@
             color: whitesmoke;
             font-weight: normal !important;
         }
+
     </style>
 @endpush
 
 @section('content')
-    <div class="bg-primary min-h-100 wrapper">
+    <div class="bg-primary min-h-100 wrapper pt-5">
         <div class="container-fluid min-h-100">
             <div class="text-center">
 
@@ -44,7 +45,7 @@
                                             </label>
                                         </div>
                                         <input type="text"
-                                               class="form-control rounded-full bg-light form-border p-4 {{ $errors->has('familyname') ? ' is-invalid' : '' }}"
+                                               class="form-control rounded-full lightOpaqueBackground form-border p-4 {{ $errors->has('familyname') ? ' is-invalid' : '' }}"
                                                name="familyname[{{$i}}][name]" value="{{ old('familyname') }}"
                                                id="familyname"
                                                placeholder="{{ trans('auth.memberName') }}">
@@ -58,7 +59,7 @@
                                 <div id="buttons" class="row py-1">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                         <button type="submit"
-                                                class="btn btn-lg btn-dark text-light submit-button w-100">{{ trans('auth.register_familymembers') }}</button>
+                                                class="btn btn-lg darkOpaqueBackground text-light submit-button w-100">{{ trans('auth.register_familymembers') }}</button>
                                     </div>
                                 </div>
                             </form>

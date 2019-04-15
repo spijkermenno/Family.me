@@ -26,4 +26,27 @@ class DatabaseFamilyMemberRepository extends Repository implements FamilyMemberR
     {
         return Database::table('family_members')->where('family_id', $id)->get();
     }
+
+    public function getIdsByFamilyId(int $id)
+    {
+        return Database::table('family_members')->where('family_id', $id)->get('id');
+    }
+
+    public function getByFamilyIdWithImages(int $id)
+    {
+        return Database::table('family_members')
+            ->leftJoin('family_member_image', 'family_members.id', '=', 'family_member_image.family_member_id')
+            ->select('family_members.*', 'family_member_image.filename')
+            ->where('family_members.family_id', $id)
+            ->get();
+    }
+
+    public function getByIdWithImage(int $id)
+    {
+        return Database::table('family_members')
+            ->leftJoin('family_member_image', 'family_members.id', '=', 'family_member_image.family_member_id')
+            ->select('family_members.*', 'family_member_image.filename')
+            ->where('family_members.id', $id)
+            ->get();
+    }
 }

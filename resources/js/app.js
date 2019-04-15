@@ -32,4 +32,4 @@ const app = new Vue({
     el: '#app'
 });
 
-require('ajax');
+require('./ManageFamilyMembers');

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Repositories\DatabaseFamilyRepository;
 use App\Repositories\DatabaseFamilyMemberRepository;
 
-class SelectFamilyMemberController extends Controller
+class ManageFamilyMemberController extends Controller
 {
     private $DatabaseFamilyRepository;
     private $DatabaseFamilyMemberRepository;
@@ -18,17 +18,12 @@ class SelectFamilyMemberController extends Controller
         $this->DatabaseFamilyMemberRepository = new DatabaseFamilyMemberRepository();
     }
 
-    private function getFamilyMembers()
-    {
-        return $this->DatabaseFamilyMemberRepository->getByFamilyId($this->FamilyId);
-    }
-
     public function index()
     {
         $this->FamilyId = Auth::id();
 
-        return view('auth.selectFamilyMember', [
-            'familyMembers' => $this->getFamilyMembers()
+        return view('auth.manageFamilyMembers', [
+            'familyMembers' => $this->DatabaseFamilyMemberRepository->getByFamilyIdWithImages($this->FamilyId)
         ]);
     }
 }

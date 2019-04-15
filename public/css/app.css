@@ -13708,31 +13708,27 @@ a.text-dark:focus {
   }
 }
 
-@-webkit-keyframes movingGradient {
+@-webkit-keyframes wiggle {
   0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
   }
 
   100% {
-    background-position: 0% 50%;
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
   }
 }
 
-@keyframes movingGradient {
+@keyframes wiggle {
   0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
   }
 
   100% {
-    background-position: 0% 50%;
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
   }
 }
 
@@ -13926,5 +13922,111 @@ input.form-border:active {
     position: relative;
     line-height: 24px;
   }
+}
+
+.opaqueBackground {
+  background-color: rgba(0, 0, 0, 0.15);
+  transition: background-color 150ms;
+}
+
+.opaqueBackground:hover {
+  background-color: rgba(0, 0, 0, 0.29);
+}
+
+.darkOpaqueBackground {
+  background-color: rgba(0, 0, 0, 0.33);
+  transition: background-color 150ms;
+}
+
+.darkOpaqueBackground:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.lightOpaqueBackground {
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: background-color 150ms;
+}
+
+.lightOpaqueBackground:hover {
+  background-color: rgba(255, 255, 255, 0.99);
+}
+
+#wrapper {
+  height: 100vh;
+  padding: 10rem 1rem;
+}
+
+.familyMember {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+}
+
+.familyMember .name {
+  text-align: center;
+}
+
+.familyMember .box {
+  display: inline-block;
+  width: 10rem;
+  height: 10rem;
+  transition: background-color 150ms;
+  overflow: hidden;
+}
+
+.familyMember .box img {
+  width: 150%;
+  margin: 0 -25%;
+}
+
+.familyMember:hover .box {
+  opacity: 0.9;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #e0e0e0;
+  border-radius: 1rem;
+  transition: background-color 150ms;
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #eee;
+}
+
+.wiggle {
+  -webkit-animation: wiggle 0.1s infinite alternate;
+          animation: wiggle 0.1s infinite alternate;
+  -webkit-transform-origin: center 60%;
+          transform-origin: center 60%;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10rem;
+  width: 10rem;
+  text-align: center;
+  line-height: 2rem;
+  padding-top: 4rem;
+  text-shadow: 2px 2px 1px #555;
+  z-index: 100;
+}
+
+.overlay i {
+  display: none;
+}
+
+.familyMember:hover .overlay i {
+  display: inline-block;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
