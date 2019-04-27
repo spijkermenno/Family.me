@@ -8,30 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b453ac4-ec6d-41de-860c-2c17f4f0b8a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/htdocs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/htdocs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FamilyMemberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FamilyMemberController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/familyMemberSelected.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/familyMemberSelected.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/DatabaseFamilyMemberRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/DatabaseFamilyMemberRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/ManageFamilyMembers.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/ManageFamilyMembers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/dictionary.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/dictionary.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/nl/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/nl/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/manageFamilyMember.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/manageFamilyMember.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/registerFamilyMembers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/registerFamilyMembers.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/selectFamilyMember.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/selectFamilyMember.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +23,7 @@
     <favorites_list name="htdocs" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -77,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/sass/_custom.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="296" column="21" lean-forward="true" selection-start-line="296" selection-start-column="21" selection-end-line="296" selection-end-column="21" />
+            <state relative-caret-position="100">
+              <caret line="287" column="1" lean-forward="true" selection-start-line="287" selection-start-column="1" selection-end-line="287" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -305,6 +282,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -351,7 +329,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -434,6 +411,7 @@
       <workItem from="1555496067314" duration="7830000" />
       <workItem from="1555765700187" duration="49000" />
       <workItem from="1556192033534" duration="5321000" />
+      <workItem from="1556379052662" duration="557000" />
     </task>
     <task id="LOCAL-00001" summary="Added the ability to add family members including migrations.">
       <created>1554794391557</created>
@@ -477,11 +455,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555070792673</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="choosing and managing familymembers is now working.">
+      <created>1556379296228</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1556379296228</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144520000" />
+    <option name="totallyTimeSpent" value="145077000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -496,7 +481,7 @@
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4982079" visible="true" weight="0.17324094" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4982079" visible="true" weight="0.1748401" />
       <window_info id="Structure" order="1" sideWeight="0.50179213" side_tool="true" weight="0.26066098" />
       <window_info id="Favorites" order="2" sideWeight="0.50179213" side_tool="true" weight="0.26066098" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -526,7 +511,8 @@
     <MESSAGE value="added travis." />
     <MESSAGE value="cs fix" />
     <MESSAGE value="Working on managing family members." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on managing family members." />
+    <MESSAGE value="choosing and managing familymembers is now working." />
+    <option name="LAST_COMMIT_MESSAGE" value="choosing and managing familymembers is now working." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Repositories/Repository.php">
@@ -827,13 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="474" selection-start-line="15" selection-start-column="474" selection-end-line="15" selection-end-column="474" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -848,13 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -862,10 +834,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="474" selection-start-line="15" selection-start-column="474" selection-end-line="15" selection-end-column="474" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/_custom.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="296" column="21" lean-forward="true" selection-start-line="296" selection-start-column="21" selection-end-line="296" selection-end-column="21" />
+        <state relative-caret-position="100">
+          <caret line="287" column="1" lean-forward="true" selection-start-line="287" selection-start-column="1" selection-end-line="287" selection-end-column="1" />
         </state>
       </provider>
     </entry>
