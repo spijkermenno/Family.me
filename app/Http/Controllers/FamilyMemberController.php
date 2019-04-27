@@ -19,7 +19,8 @@ class FamilyMemberController extends Controller
         $this->DatabaseFamilyMemberRepository = new DatabaseFamilyMemberRepository();
     }
 
-    public function save(Request $request) {
+    public function save(Request $request)
+    {
         $this->FamilyId = Auth::id();
         $id = $request->input('id');
 
@@ -88,7 +89,7 @@ class FamilyMemberController extends Controller
 
     private function getRoles($familyMemberRole)
     {
-        $roles = array(
+        $roles = [
             ['translationText' => 'dictionary.father', 'value' => 'father', 'active' => false],
             ['translationText' => 'dictionary.mother', 'value' => 'mother', 'active' => false],
             ['translationText' => 'dictionary.daughter', 'value' => 'daughter', 'active' => false],
@@ -99,7 +100,7 @@ class FamilyMemberController extends Controller
             ['translationText' => 'dictionary.grandpa', 'value' => 'grandpa', 'active' => false],
             ['translationText' => 'dictionary.uncle', 'value' => 'uncle', 'active' => false],
             ['translationText' => 'dictionary.aunt', 'value' => 'aunt', 'active' => false]
-        );
+        ];
 
         if ($familyMemberRole == '') {
             return $roles;

@@ -7,7 +7,8 @@
  * @param bool $strip_html if html tags are to be stripped
  * @return string
  */
-function trim_text($input, $length, $ellipses = true, $strip_html = true) {
+function trim_text($input, $length, $ellipses = true, $strip_html = true)
+{
     //strip tags, if desired
     if ($strip_html) {
         $input = strip_tags($input);

@@ -19,7 +19,6 @@ class familyMemberSelected
             return false;
         });
 
-
         if (!$familyMember) {
             return redirect()->route('SelectFamilyMember');
         }
