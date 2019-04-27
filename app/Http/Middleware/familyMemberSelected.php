@@ -20,7 +20,7 @@ class familyMemberSelected
         });
 
         if (!$familyMember) {
-            return redirect()->route('SelectFamilyMember');
+            return redirect()->route('selectFamilyMember');
         }
 
         return $next($request);
