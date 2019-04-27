@@ -28,10 +28,15 @@ Route::middleware('guest:web')
     });
 
 Route::group(['middleware' => ['auth:web', 'verified']], function () {
+    Route::get('browse', 'FamilyMemberController@select')->name('selectFamilyMember');
+    Route::post('browse', 'FamilyMemberController@save')->name('selectFamilyMember');
+    Route::post('manage', 'FamilyMemberController@manage')->name('manageFamilyMember');
+    Route::post('process', 'FamilyMemberController@process')->name('processFamilyMember');
+});
+
+Route::group(['middleware' => ['auth:web', 'verified', 'familyMemberSelected']], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('agenda', 'AgendaController@index')->name('agenda');
-
-    Route::get('browse', 'SelectFamilyMemberController@index')->name('SelectFamilyMember');
 
     Route::get('/account', 'AccountController@index')->name('profile');
 

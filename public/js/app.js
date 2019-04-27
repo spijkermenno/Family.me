@@ -48997,6 +48997,36 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/ManageFamilyMembers.js":
+/*!*********************************************!*\
+  !*** ./resources/js/ManageFamilyMembers.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var familyMember = $('.familyMember');
+var box = familyMember.find('.box');
+var overlayManage = familyMember.find('.overlay-manage');
+var overlayBrowse = familyMember.find('.overlay-browse');
+var manage = $('#manageFamilyMembers');
+var browse = $('#browseFamilyMembers');
+manage.click(function () {
+  box.addClass('wiggle');
+  overlayManage.show();
+  overlayBrowse.hide();
+  manage.hide();
+  browse.show();
+});
+browse.click(function () {
+  box.removeClass('wiggle');
+  overlayManage.hide();
+  overlayBrowse.show();
+  browse.hide();
+  manage.show();
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -49032,6 +49062,8 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+
+__webpack_require__(/*! ./ManageFamilyMembers */ "./resources/js/ManageFamilyMembers.js");
 
 /***/ }),
 

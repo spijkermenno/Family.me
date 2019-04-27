@@ -19,11 +19,57 @@ class DatabaseFamilyMemberRepository extends Repository implements FamilyMemberR
 
     public function getById(int $id)
     {
-        return Database::table('family_members')->where('id', $id)->get();
+        return Database::table('family_members')->where('id', $id)->get()[0];
     }
 
     public function getByFamilyId(int $id)
     {
         return Database::table('family_members')->where('family_id', $id)->get();
+    }
+
+    public function getIdsByFamilyId(int $id)
+    {
+        return Database::table('family_members')->where('family_id', $id)->get('id');
+    }
+
+    public function getByFamilyIdWithImages(int $id)
+    {
+        return Database::table('family_members')
+            ->leftJoin('family_member_image', 'family_members.id', '=', 'family_member_image.family_member_id')
+            ->select('family_members.*', 'family_member_image.filename')
+            ->where('family_members.family_id', $id)
+            ->get();
+    }
+
+    public function getByIdWithImage(int $id)
+    {
+        return Database::table('family_members')
+            ->leftJoin('family_member_image', 'family_members.id', '=', 'family_member_image.family_member_id')
+            ->select('family_members.*', 'family_member_image.filename')
+            ->where('family_members.id', $id)
+            ->get()[0];
+    }
+
+    public function editFamilyMemberById($familyMemberId, array $fields)
+    {
+        Database::table('family_members')
+            ->where('id', $familyMemberId)
+            ->update([
+                'role' => $fields['role'],
+                'gender' => $fields['gender'],
+            ]);
+    }
+
+    public function addFamilyMemberImage($familyMemberId, $filepath)
+    {
+        Database::table('family_member_image')
+            ->where('family_member_id', $familyMemberId)
+            ->delete();
+
+        Database::table('family_member_image')
+            ->insert([
+                'family_member_id' => $familyMemberId,
+                'filename' => $filepath
+            ]);
     }
 }

@@ -13,37 +13,11 @@
             font-weight: normal !important;
         }
 
-        .opaqueBackground {
-            background-color: rgba(0, 0, 0, 0.15);
-            transition: background-color 150ms;
-        }
-
-        .opaqueBackground:hover {
-            background-color: rgba(0, 0, 0, 0.29);
-        }
-
-        .darkOpaqueBackground {
-            background-color: rgba(0, 0, 0, 0.33);
-            transition: background-color 150ms;
-        }
-
-        .darkOpaqueBackground:hover {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .lightOpaqueBackground {
-            background-color: rgba(255, 255, 255, 0.9);
-            transition: background-color 150ms;
-        }
-
-        .lightOpaqueBackground:hover {
-            background-color: rgba(255, 255, 255, 0.99);
-        }
     </style>
 @endpush
 
 @section('content')
-    <div class="bg-primary min-h-100 wrapper">
+    <div class="bg-primary wrapper">
         <div class="container-fluid min-h-100">
             <div class="text-center">
 

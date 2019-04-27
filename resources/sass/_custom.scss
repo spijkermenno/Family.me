@@ -176,3 +176,148 @@ $color2: $primary;
 
   }
 }
+
+.opaqueBackground {
+  background-color: rgba(0, 0, 0, 0.15);
+  transition: background-color 150ms;
+}
+
+.opaqueBackground:hover {
+  background-color: rgba(0, 0, 0, 0.29);
+}
+
+.darkOpaqueBackground {
+  background-color: rgba(0, 0, 0, 0.33);
+  transition: background-color 150ms;
+}
+
+.darkOpaqueBackground:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.lightOpaqueBackground {
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: background-color 150ms;
+}
+
+.lightOpaqueBackground:hover {
+  background-color: rgba(255, 255, 255, 0.99);
+}
+
+#wrapper {
+  height: 100vh;
+  padding: 10rem 1rem;
+}
+
+.familyMember {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+}
+
+.familyMember .name {
+  text-align: center;
+}
+
+.box, .box-0 {
+  display: inline-block;
+  width: 10rem;
+  height: 10rem;
+
+  transition: background-color 150ms;
+
+  overflow: hidden;
+}
+
+.box img, .familyMember .box img {
+  width: 150%;
+  margin: 0 -25%;
+}
+
+.familyMember:hover .box {
+
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #e0e0e0;
+
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  border-radius: 1rem;
+
+  transition: background-color 150ms;
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #eee;
+}
+
+.wiggle {
+  animation: wiggle .1s infinite alternate;
+  transform-origin: center 60%;
+}
+
+.overlay-manage {
+  display: none;
+}
+
+.overlay-browse, .overlay-manage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10rem;
+  width: 10rem;
+
+  text-align: center;
+  line-height: 2rem;
+  padding-top: 4rem;
+
+  text-shadow: 2px 2px 1px #555;
+  z-index: 100;
+
+  i {
+    display: none;
+  }
+}
+
+.familyMember:hover .overlay i {
+  display: inline-block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.family-card {
+  position: relative;
+  padding: 0 !important;
+  width: 100%;
+  background-color: #fff;
+
+  .image img{
+    width: 100%;
+  }
+
+  .header {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .content {
+    padding: 0 1rem 1rem 1rem;
+    font-size: 1rem;
+    font-weight: lighter;
+    color: #666;
+  }
+
+  .actions {
+    padding: 0 1rem;
+  }
+}
+
