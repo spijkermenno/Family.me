@@ -19,5 +19,7 @@ return [
     'whole_family' => 'Can be used by<br/>the whole family.',
     'family_offer' => '<span class="h1">Discover</span><br/> what Family has to offer.',
     'register_today' => 'Register today and find out!',
-    'familymembers' => 'Family Members'
+    'familymembers' => 'Family Members',
+    'chooseImage' => 'Choose image',
+    'browse' => 'Browse'
 ];

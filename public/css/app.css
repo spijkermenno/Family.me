@@ -13966,7 +13966,8 @@ input.form-border:active {
   text-align: center;
 }
 
-.familyMember .box {
+.box,
+.box-0 {
   display: inline-block;
   width: 10rem;
   height: 10rem;
@@ -13974,13 +13975,10 @@ input.form-border:active {
   overflow: hidden;
 }
 
+.box img,
 .familyMember .box img {
   width: 150%;
   margin: 0 -25%;
-}
-
-.familyMember:hover .box {
-  opacity: 0.9;
 }
 
 .button {
@@ -14004,8 +14002,12 @@ input.form-border:active {
           transform-origin: center 60%;
 }
 
-.overlay {
+.overlay-manage {
   display: none;
+}
+
+.overlay-browse,
+.overlay-manage {
   position: absolute;
   top: 0;
   left: 0;
@@ -14018,7 +14020,8 @@ input.form-border:active {
   z-index: 100;
 }
 
-.overlay i {
+.overlay-browse i,
+.overlay-manage i {
   display: none;
 }
 
@@ -14028,5 +14031,33 @@ input.form-border:active {
 
 .pointer {
   cursor: pointer;
+}
+
+.family-card {
+  position: relative;
+  padding: 0 !important;
+  width: 100%;
+  background-color: #fff;
+}
+
+.family-card .image img {
+  width: 100%;
+}
+
+.family-card .header {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.family-card .content {
+  padding: 0 1rem 1rem 1rem;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #666;
+}
+
+.family-card .actions {
+  padding: 0 1rem;
 }
 

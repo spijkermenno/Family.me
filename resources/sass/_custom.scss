@@ -219,7 +219,7 @@ $color2: $primary;
   text-align: center;
 }
 
-.familyMember .box {
+.box, .box-0 {
   display: inline-block;
   width: 10rem;
   height: 10rem;
@@ -229,13 +229,13 @@ $color2: $primary;
   overflow: hidden;
 }
 
-.familyMember .box img {
+.box img, .familyMember .box img {
   width: 150%;
   margin: 0 -25%;
 }
 
 .familyMember:hover .box {
-  opacity: 0.9;
+
 }
 
 .button {
@@ -262,8 +262,11 @@ $color2: $primary;
   transform-origin: center 60%;
 }
 
-.overlay {
+.overlay-manage {
   display: none;
+}
+
+.overlay-browse, .overlay-manage {
   position: absolute;
   top: 0;
   left: 0;
@@ -289,3 +292,32 @@ $color2: $primary;
 .pointer {
   cursor: pointer;
 }
+
+.family-card {
+  position: relative;
+  padding: 0 !important;
+  width: 100%;
+  background-color: #fff;
+
+  .image img{
+    width: 100%;
+  }
+
+  .header {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .content {
+    padding: 0 1rem 1rem 1rem;
+    font-size: 1rem;
+    font-weight: lighter;
+    color: #666;
+  }
+
+  .actions {
+    padding: 0 1rem;
+  }
+}
+

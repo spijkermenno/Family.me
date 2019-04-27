@@ -11,8 +11,20 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid min-h-100 bg-info">
+        <div class="row pt-3">
+            <div class="col-2">
 
+                <div class="family-card">
+                    <div class="image">
+                        <img src="http://www.onzehost.com.br/images/test-img.jpg" alt="test image" />
+                    </div>
+                    <div class="header">Test title</div>
+                    <div class="content">{{trim_text($loremIpsum, 100)}}</div>
+                </div>
+
+            </div>
+        </div>
     </div>
     {{-- Section for the site content --}}
 @endsection

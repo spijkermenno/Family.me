@@ -1,20 +1,23 @@
-var toggle = 0;
-$('#manageFamilyMembers').click(function () {
-    const box = $('.familyMember').find('.box');
-    const overlay = $('.familyMember').find('.overlay');
+const familyMember = $('.familyMember');
+const box = familyMember.find('.box');
+const overlayManage = familyMember.find('.overlay-manage');
+const overlayBrowse = familyMember.find('.overlay-browse');
+const manage = $('#manageFamilyMembers');
+const browse = $('#browseFamilyMembers');
 
-    console.log(toggle);
-    switch (toggle) {
-        case 0:
-            box.addClass('wiggle');
-            overlay.show();
+manage.click(function () {
 
-            toggle = 1;
-            break;
-        case 1:
-            box.removeClass('wiggle');
-            overlay.hide();
-            toggle = 0;
-            break;
-    }
+    box.addClass('wiggle');
+    overlayManage.show();
+    overlayBrowse.hide();
+    manage.hide();
+    browse.show();
+});
+
+browse.click(function () {
+    box.removeClass('wiggle');
+    overlayManage.hide();
+    overlayBrowse.show();
+    browse.hide();
+    manage.show();
 });

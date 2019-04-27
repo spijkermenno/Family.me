@@ -1,3 +1,4 @@
+{{-- Extending the main page layout (located at /recourses/views/layouts/app.blade.php) --}}
 @extends('layouts.app')
 
 @push('styles')
@@ -17,6 +18,8 @@
 @endpush
 
 @section('content')
+    {{-- Section for the site content --}}
+
     <div class="bg-primary min-h-100 wrapper pt-5">
         <div class="container-fluid min-h-100">
             <div class="text-center">

@@ -15,14 +15,20 @@
     <div id="wrapper" class="container-fluid bg-primary">
         <div class="row justify-content-center">
             @foreach($familyMembers as $familyMember)
-                <div class="familyMember">
-                    <a class="overlay" href="{{route('manageFamilyMember', ['id' => $familyMember->id])}}">
-                        <i class="fa fa-pencil text-light fa-3x"></i>
-                    </a>
+                <div class="familyMember pointer mx-4">
+                    <form class="overlay-manage" method="POST" action="{{route('manageFamilyMember')}}" onclick="this.submit()">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$familyMember->id}}"/>
+                    </form>
+
+                    <form class="overlay-browse" method="POST" action="{{route('selectFamilyMember')}}" onclick="this.submit()">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$familyMember->id}}"/>
+                    </form>
 
                     @if($familyMember->filename != null)
                         <div class="box rounded-full bg-dark">
-                            <img src="{{$familyMember->filename}}" alt="{{$familyMember->name}}"/>
+                            <img src="{{asset("storage/app/$familyMember->filename")}}" alt="{{$familyMember->name}}"/>
 
                         </div>
                     @else
@@ -43,6 +49,14 @@
             <div class="button h4 text-light pointer" id="manageFamilyMembers">
                 {{trans('auth.manageAccounts')}}
             </div>
+
+            <div class="button h4 text-light pointer" id="browseFamilyMembers" style="display: none">
+                {{trans('auth.browseAccounts')}}
+            </div>
         </div>
+
+        <form id="manageFamilyMembersForm" class="d-none" method="post" action="{{route('manageFamilyMember')}}">
+
+        </form>
     </div>
 @endsection

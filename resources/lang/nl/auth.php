@@ -40,4 +40,15 @@ return [
     'request_new' => 'Klik hier om een nieuwe aan te vragen',
     'verify_mail_send' => 'Er is een nieuwe verificatielink verzonden naar uw e-mailadres.',
     'manageAccounts' => 'Beheer jouw familieleden',
+
+    'userNotMemberOfFamily' => 'Deze gebruiker is niet lid van deze familie',
+    'name' => 'Voornaam',
+    'image' => 'Afbeelding',
+    'role' => 'Familielid rol',
+    'gender' => 'Geslacht',
+    'male' => 'Man',
+    'female' => 'Vrouw',
+    'otherGender' => 'Anders',
+    'saveFamilyMember' => 'Opslaan',
+    'browseAccounts' => 'Kies een familielid',
 ];

@@ -49004,25 +49004,25 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var toggle = 0;
-$('#manageFamilyMembers').click(function () {
-  var box = $('.familyMember').find('.box');
-  var overlay = $('.familyMember').find('.overlay');
-  console.log(toggle);
-
-  switch (toggle) {
-    case 0:
-      box.addClass('wiggle');
-      overlay.show();
-      toggle = 1;
-      break;
-
-    case 1:
-      box.removeClass('wiggle');
-      overlay.hide();
-      toggle = 0;
-      break;
-  }
+var familyMember = $('.familyMember');
+var box = familyMember.find('.box');
+var overlayManage = familyMember.find('.overlay-manage');
+var overlayBrowse = familyMember.find('.overlay-browse');
+var manage = $('#manageFamilyMembers');
+var browse = $('#browseFamilyMembers');
+manage.click(function () {
+  box.addClass('wiggle');
+  overlayManage.show();
+  overlayBrowse.hide();
+  manage.hide();
+  browse.show();
+});
+browse.click(function () {
+  box.removeClass('wiggle');
+  overlayManage.hide();
+  overlayBrowse.show();
+  browse.hide();
+  manage.show();
 });
 
 /***/ }),
