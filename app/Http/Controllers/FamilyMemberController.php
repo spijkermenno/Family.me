@@ -65,12 +65,16 @@ class FamilyMemberController extends Controller
         if (!$this->isMemberOfFamily($request->get('familyMemberId'), $this->FamilyId)) {
             return abort(300, trans('auth.userNotMemberOfFamily'));
         }
-        $path = $request->file('userImage')->store('userImages');
 
         $this->DatabaseFamilyMemberRepository->editFamilyMemberById($request->get('familyMemberId'), $request->all());
-        $this->DatabaseFamilyMemberRepository->addFamilyMemberImage($request->get('familyMemberId'), $path);
 
-        return redirect()->route('SelectFamilyMember');
+        if ($request->file('userImage')) {
+            $path = $request->file('userImage')->store('userImages');
+
+            $this->DatabaseFamilyMemberRepository->addFamilyMemberImage($request->get('familyMemberId'), $path);
+        }
+
+        return redirect()->route('selectFamilyMember');
     }
 
     private function isMemberOfFamily($memberId, $familyId)

@@ -13,6 +13,11 @@
     {{-- Section for the site content --}}
 
     <div id="wrapper" class="container-fluid bg-primary">
+
+        <a class="position-absolute opaqueText pointer" style="top: 1rem; right: 1rem;" href="/logout">
+            <i class="fa fa-3x fa-times"></i>
+        </a>
+
         <div class="row justify-content-center">
             @foreach($familyMembers as $familyMember)
                 <div class="familyMember pointer mx-4">

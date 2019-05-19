@@ -1,0 +1,22 @@
+form.mw {
+  width: 300px;
+}
+
+input.form-border {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #999;
+  border-radius: 0;
+  caret-color: #FE5D26;
+  color: #333 !important;
+}
+
+input.form-border::placeholder {
+  color: #999;
+  padding-left: 5px;
+}
+
+input.form-border:active {
+  border-bottom: 1px solid #eee;
+}

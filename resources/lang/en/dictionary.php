@@ -21,5 +21,16 @@ return [
     'register_today' => 'Register today and find out!',
     'familymembers' => 'Family Members',
     'chooseImage' => 'Choose image',
-    'browse' => 'Browse'
+    'browse' => 'Browse',
+
+    'father' => 'Father',
+    'mother' => 'Mother',
+    'daughter' => 'Daughter',
+    'granddaughter' => 'Grand daughter',
+    'son' => 'Son',
+    'grandson' => 'Grand son',
+    'grandma' => 'Grandma',
+    'grandpa' => 'Grandpa',
+    'uncle' => 'Uncle',
+    'aunt' => 'Aunt',
 ];

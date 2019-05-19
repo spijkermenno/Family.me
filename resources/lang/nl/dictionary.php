@@ -19,5 +19,18 @@ return [
     'whole_family' => 'Bruikbaar voor<br/>de hele familie.',
     'family_offer' => '<span class="h1">Ontdek</span><br/>Wat Family heeft te bieden.',
     'register_today' => 'Registreer vandaag en check het!',
-    'familymembers' => 'Familieleden'
+    'familymembers' => 'Familieleden',
+    'chooseImage' => 'Kies afbeelding',
+    'browse' => 'Kiezen',
+
+    'father' => 'Vader',
+    'mother' => 'Moeder',
+    'daughter' => 'Dochter',
+    'granddaughter' => 'Kleindochter',
+    'son' => 'Zoon',
+    'grandson' => 'Kleinzoon',
+    'grandma' => 'oma',
+    'grandpa' => 'Opa',
+    'uncle' => 'Oom',
+    'aunt' => 'Tante',
 ];

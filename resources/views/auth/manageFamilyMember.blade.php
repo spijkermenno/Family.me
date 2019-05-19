@@ -3,19 +3,20 @@
 
 @push('styles')
     {{-- Section for the page style (dont forget the <style> tags --}}
+    <style>
+        .custom-file-label {
+            line-height: 2.3 !important;
+        }
+
+        .custom-file-label:after {
+            height: unset !important;
+            line-height: 2.3 !important;
+
+            content: '{{trans('dictionary.browse')}}' !important;
+            right: -5px !important;
+        }
+    </style>
 @endpush
-<style>
-    .custom-file-label {
-        line-height: 2.3 !important;
-    }
-
-    .custom-file-label:after {
-        height: unset !important;
-        line-height: 2.3 !important;
-
-        content: '{{trans('dictionary.browse')}}' !important;
-    }
-</style>
 
 @section('content')
     {{-- Section for the site content --}}
@@ -30,13 +31,13 @@
                         <input type="hidden" name="familyMemberId" value="{{$familyMember->id}}">
                         <div id="formfield-image" class="form-group text-center">
                             @if($familyMember->filename != null)
-                                <div class="box rounded-full bg-dark">
-                                    <img src="{{ asset("storage/app/$familyMember->filename")}}" alt="{{$familyMember->name}}"/>
-
+                                <div id="image-preview" class="box rounded-full bg-dark">
+                                    <img src="{{ asset("storage/app/$familyMember->filename")}}"
+                                         alt="{{$familyMember->name}}" id="image-preview-img"/>
                                 </div>
                             @else
-                                <div class="box-0 rounded-full opaqueBackground">
-                                    <br/>
+                                <div id="image-preview" class="box rounded-full opaqueBackground">
+
                                 </div>
                             @endif
                         </div>
@@ -49,8 +50,9 @@
                                     </label>
                                 </div>
                                 <div class="custom-file rounded-full lightOpaqueBackground form-border p-4 overflow-hidden">
-                                    <input type="file" name="userImage" onchange="$('#imageUpload').text(this.files[0].name)" class="custom-file-input h-100" id="validatedCustomFile"
-                                           required>
+                                    <input type="file" name="userImage"
+                                           onchange="$('#imageUpload').text(this.files[0].name); let img = document.createElement('img'); img.src = window.URL.createObjectURL(this.files[0]); document.getElementById('image-preview').appendChild(img);"
+                                           class="custom-file-input h-100" id="validatedCustomFile">
                                     <label id="imageUpload" class="custom-file-label h-100"
                                            for="validatedCustomFile">{{trans('dictionary.chooseImage')}}</label>
                                 </div>
@@ -85,7 +87,8 @@
                                     name="role" id="role">
                                 <option disabled="disabled" selected></option>
                                 @foreach($roles as $role)
-                                    <option value="{{$role['value']}}" @if($role['active'] == true) selected @endif>{{trans($role['translationText'])}}</option>
+                                    <option value="{{$role['value']}}"
+                                            @if($role['active'] == true) selected @endif>{{trans($role['translationText'])}}</option>
                                 @endforeach
                             </select>
 
@@ -98,19 +101,22 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" value="male" @if($familyMember->gender == 'male') checked @endif>
+                                <input class="form-check-input" type="radio" name="gender" value="male"
+                                       @if($familyMember->gender == 'male') checked @endif>
                                 <label class="form-check-label text-light" for="gender">
                                     {{trans('auth.male')}}
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" value="female" @if($familyMember->gender == 'female') checked @endif>
+                                <input class="form-check-input" type="radio" name="gender" value="female"
+                                       @if($familyMember->gender == 'female') checked @endif>
                                 <label class="form-check-label text-light" for="gender">
                                     {{trans('auth.female')}}
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" value="other" @if($familyMember->gender == 'other') checked @endif>
+                                <input class="form-check-input" type="radio" name="gender" value="other"
+                                       @if($familyMember->gender == 'other') checked @endif>
                                 <label class="form-check-label text-light" for="gender">
                                     {{trans('auth.otherGender')}}
                                 </label>
