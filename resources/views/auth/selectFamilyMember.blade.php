@@ -15,18 +15,21 @@
     <div id="wrapper" class="container-fluid bg-primary">
 
         <a class="position-absolute opaqueText pointer" style="top: 1rem; right: 1rem;" href="/logout">
-            <i class="fa fa-3x fa-times"></i>
+            <i class="fa fa-3x fa-times" data-toggle="tooltip" data-placement="bottom"
+               title="{{trans('auth.logout')}}"></i>
         </a>
 
         <div class="row justify-content-center">
             @foreach($familyMembers as $familyMember)
                 <div class="familyMember pointer mx-4">
-                    <form class="overlay-manage" method="POST" action="{{route('manageFamilyMember')}}" onclick="this.submit()">
+                    <form class="overlay-manage" method="POST" action="{{route('manageFamilyMember')}}"
+                          onclick="this.submit()">
                         @csrf
                         <input type="hidden" name="id" value="{{$familyMember->id}}"/>
                     </form>
 
-                    <form class="overlay-browse" method="POST" action="{{route('selectFamilyMember')}}" onclick="this.submit()">
+                    <form class="overlay-browse" method="POST" action="{{route('selectFamilyMember')}}"
+                          onclick="this.submit()">
                         @csrf
                         <input type="hidden" name="id" value="{{$familyMember->id}}"/>
                     </form>
@@ -64,4 +67,12 @@
 
         </form>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 @endsection

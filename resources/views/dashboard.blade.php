@@ -79,6 +79,9 @@
                     </ul>
 
                     <ul class="days">
+                        @for($x = 0; $x < $calender['EmptyDaysInCalender']; $x++)
+                            <li></li>
+                        @endfor
                         @for($i = 1; $i <= $calender['daysInMonth']; $i++)
                             @if($i == $calender['dayInMonth'])
                                 <li><span class="active">{{$i}}</span></li>
